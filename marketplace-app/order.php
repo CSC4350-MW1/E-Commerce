@@ -8,16 +8,16 @@ $mysqli=new mysqli('localhost','root','','marketplace');
 		exit();
 	}
 
-if(isset($_GET['details'])){
 
-	$id=$_GET['details'];
+
+	$id= '1';
     $query2 = "INSERT INTO carts (customer_id, item_id) VALUES ('1', '$id')";
     $query3= "SELECT * FROM items where item_id='$id' ";
 	$read2=$mysqli->query($query2);
     $read3=$mysqli->query($query3);
     $total = 0;
   
-}
+
 
 ?>
 
@@ -27,7 +27,7 @@ if(isset($_GET['details'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible">
     <link rel="stylesheet" href="style.css">
-    <title>Welcome, Seller!</title>
+    <title>MarketPlace</title>
     <link rel="icon" type="image/x-icon" href="favicons/deal.png">
 </head>
 <body>
@@ -43,7 +43,7 @@ if(isset($_GET['details'])){
 
    
 
-    <h2>  Buyer 1's Cart  </h2>
+    <h2>  Order Placed </h2>
     <hr>
 
     <div class = "contents">
@@ -77,19 +77,23 @@ if(isset($_GET['details'])){
         <?php } ?>
         </tbody>
     </table> 
-    <table>
-        
-        <tr>
-            <td>Shipping = $7 <?php $total = $total +7; ?></td>
-        </tr>
-        <tr>
-        <td>Total: <?php echo '$'.$total; ?> <td>
-        </tr> 
-        </table>
+    
+
+<h3>Confirmation Number: #12345</h3> <br>
+Hello Buyer, <br>
+
+We’re happy to let you know that we’ve received your order.<br>
+
+Once your package ships, we will send you an email with a tracking number and link so you can see the movement of your package.<br>
+
+If you have any questions, contact us here.!<br>
+
+We are here to help!<br>
+
+Returns: If you would like to return your product(s), please contact us.<br>
+
     </div>
 <br>
-    <h3><a href="buyer.php">Back to Items</a></h3>
-    <br>
-    <h3><a href="payment.html">Checkout</a></h3>        
+          
 </body>
 </html>
